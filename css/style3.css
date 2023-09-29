@@ -1,0 +1,141 @@
+/* General styles */
+body {
+    overflow: hidden; /* Убираем скролл бар */
+}
+
+.container {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
+                      url(https://i.imgur.com/A67ycDH.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 5%;
+    position: relative;
+    overflow-y: hidden;
+}
+
+/* Form styles */
+.donateHero__groups-item {
+    display: flex;
+    align-items: center;
+    max-width: 320px;
+    gap: 20px;
+    outline: 0;
+    margin-top: 40px;
+}
+
+.donateHero__groups-item input,
+.donateHero__groups-item select {
+    font-family: Acrom;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #313030;
+    outline: 0;
+}
+
+.donateHero__groups-item input::placeholder,
+.donateHero__groups-item select::placeholder {
+    color: #4d4d4d;
+}
+
+/* Label styles */
+.donateHero__groups-item label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button styles */
+.buyHero__btn {
+    cursor: pointer;
+    width: 320px;
+    padding: 16px;
+    border: 0;
+    border-radius: 8px;
+    font-family: Acrom;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    background: linear-gradient(116.85deg, #c0fb1dfd 18.07%, #ace2d6 83.92%);
+    box-shadow: 0 4px 80px rgba(157, 240, 24, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 50px;
+}
+
+.buyHero__btn:hover {
+    background: linear-gradient(116.85deg, #ace2d6 18.07%, #c0fb1dfd 83.92%);
+    transform: translateY(-2px);
+}
+
+/* Title styles */
+.donateHero-title {
+    font-family: Acrom;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    max-width: 195px;
+    margin-left: 120px;
+    transition: all 0.2s ease;
+}
+
+/* Container specific styles */
+.donateHero {
+    font-family: Acrom;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    padding-top: 200px;
+    line-height: 1;
+}
+
+.donateHero__groups {
+    font-family: Acrom;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+/* Description styles */
+.donateHero__desc {
+    font-family: Acrom;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    max-width: 413px;
+    display: none;
+    z-index: 5;
+    position: absolute;
+}
+
+/* Method pay styles */
+.method_pay {
+    font-family: Acrom;
+    font-size: 16px;
+    line-height: 1;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+/* Disabled option styles */
+.donateHero__groups-item select option[disabled] {
+    color: #ccc;
+}

@@ -1,0 +1,99 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Acrom, sans-serif;
+}
+
+/* Container Styles */
+.container {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url('https://i.imgur.com/rjQNP2j.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0 5%;
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Play Hero Section Styles */
+.playHero {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.playHero__item {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.playHero__item-info {
+    max-width: 602px;
+    margin: 0 auto;
+}
+
+.playHero__item-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.playHero__item-text {
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #FF0073;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #e60068;
+}
+
+.btn-secondary {
+    border: 1px solid #FF0073;
+    background-color: transparent;
+    color: #FF0073;
+}
+
+.btn-secondary:hover {
+    background-color: #FF0073;
+    color: #fff;
+}
+
+/* Image Styles */
+img[src="images/vk_play.png"] {
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+}

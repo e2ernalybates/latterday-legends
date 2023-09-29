@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/avaGroup.png">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style3.css">
+    <title>Latterday Legends | Магазин</title>
+</head>
+<body>
+    <div class="container">
+        <div class="donateHero">
+            <h2 class="donateHero-title">Донат
+                <span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0_801_138" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="12">
+                            <rect width="12" height="12" fill="url(#pattern0)"></rect>
+                        </mask>
+                        <g mask="url(#mask0_801_138)">
+                            <rect width="12" height="12" fill="#32CF67"></rect>
+                        </g>
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_801_138" transform="scale(0.00195312)"></use>
+                            </pattern>
+                        </defs>
+                    </svg>
+                </span>
+            </h2>
+            <form action="don" method="post">
+                <div class="donateHero__groups">
+                    <div class="donateHero__groups-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.4063 16.3467C19.3351 15.186 18.0351 14.2598 16.5883 13.6262C15.1415 12.9927 13.5791 12.6656 11.9997 12.6656C10.4202 12.6656 8.85788 12.9927 7.41105 13.6262C5.96421 14.2598 4.66424 15.186 3.59301 16.3467C3.42762 16.5296 3.3351 16.7668 3.33301 17.0133V21.0133C3.33651 21.2762 3.44342 21.5272 3.63057 21.7118C3.81773 21.8965 4.07009 22 4.33301 22H19.6663C19.9316 22 20.1859 21.8947 20.3734 21.7071C20.561 21.5196 20.6663 21.2652 20.6663 21V17C20.661 16.7581 20.5687 16.5261 20.4063 16.3467Z" fill="white"></path>
+                            <path d="M11.6667 12.3333C14.244 12.3333 16.3333 10.244 16.3333 7.66667C16.3333 5.08934 14.244 3 11.6667 3C9.08934 3 7 5.08934 7 7.66667C7 10.244 9.08934 12.3333 11.6667 12.3333Z" fill="white"></path>
+                        </svg>
+                        <input type="text" name="account" id="" placeholder="Никнейм">
+                    </div>
+                    <div class="donateHero__groups-item">
+                        <img class="method_pay" src="images/method.png" alt="">
+                        <select name="method_pay" id="">
+                            <option selected="" disabled="">Выберите платежную систему</option>
+                            <option value="enot">Enot</option>
+                            <option value="payok">Payok</option>
+                            <option value="unitpay">Unitpay</option>
+                        </select>
+                    </div>
+                    <div class="donateHero__groups-item">
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.3337 11.5C17.9787 11.5 20.1254 9.35329 20.1254 6.70829C20.1254 4.06329 17.9787 1.91663 15.3337 1.91663C12.6887 1.91663 10.542 4.06329 10.542 6.70829C10.542 9.35329 12.6887 11.5 15.3337 11.5ZM20.5566 16.8666C20.1829 16.4833 19.7133 16.2916 19.167 16.2916H12.4587L10.4654 15.592L10.7816 14.6912L12.4587 15.3333H15.142C15.4774 15.3333 15.7458 15.1991 15.9662 14.9787C16.1866 14.7583 16.292 14.49 16.292 14.1929C16.292 13.6754 16.0429 13.3208 15.5445 13.1195L8.57744 10.5416H6.70869V19.1666L13.417 21.0833L21.1124 18.2083C21.122 17.7004 20.9304 17.25 20.5566 16.8666ZM4.79203 10.5416H0.943359V21.0833H4.79203V10.5416Z" fill="white"></path>
+                        </svg>
+                        <input type="number" name="sum" id="" placeholder="Сумма">
+                    </div>
+                    <button type="submit" class="buyHero__btn groups-btn">Оплатить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
