@@ -149,10 +149,7 @@ nav ul li a h4:hover::after {
     nav ul {
         text-align: left;
         padding-right: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
+        display: none; /* Скрываем основное меню для ПК */
     }
 
     .logo {
