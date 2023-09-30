@@ -18,7 +18,7 @@
 
 nav {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
     align-items: center;
     padding: 5px 0;
 }
@@ -34,29 +34,49 @@ nav {
 }
 
 nav ul {
-    list-style: none;
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    list-style: none;
+    margin: 10px 30px;
 }
 
-nav ul li a {
-    text-decoration: none;
+nav ul li a h4 {
     color: #fff;
-    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a h4::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+nav ul li a h4:hover::after {
+    width: 50%;
 }
 
 .text-box {
     position: absolute;
     bottom: 8%;
-    text-align: center;
 }
 
 .text-box h1 {
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 100px;
+    line-height: 160px;
+    margin-left: -10px;
     color: transparent;
     -webkit-text-stroke: 1px #fff;
     background: url(https://i.imgur.com/jvT9I6M.png);
@@ -80,7 +100,19 @@ nav ul li a {
 
 .button:hover {
     background-color: #fdff6b;
-    color: #000;
+    color: #000000;
+}
+
+.nav-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 2px solid transparent;
+}
+
+.nav-button:hover {
+    background-color: #fdff6b;
+    color: #000000;
+    border-color: #fdff6b;
 }
 
 @keyframes back {
@@ -91,7 +123,7 @@ nav ul li a {
 
 .text-box h3 {
     color: #fff;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 500;
 }
 
@@ -104,29 +136,47 @@ nav ul li a {
 .social-icons img {
     width: 50px;
     display: block;
-    margin: 15px 0;
+    margin: 25px 5px;
 }
 
 /* Медиа-запрос для мобильных устройств */
 @media screen and (max-width: 768px) {
+    /* Скрыть обычное меню на мобильных устройствах */
     nav ul {
         display: none;
-        flex-direction: column;
-        text-align: center;
     }
     
-    nav ul.active {
+    /* Показать и стилизовать иконку меню */
+    #menu-toggle:checked + .menu-icon + .nav-list {
         display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
     }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .menu-icon {
+    
+    /* Показать и стилизовать кнопку меню */
+    #menu-toggle + .menu-icon {
         display: block;
-        width: 30px;
-        height: 30px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
         cursor: pointer;
+    }
+    
+    /* Анимация для кнопки меню */
+    #menu-toggle:checked + .menu-icon .bar {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    /* Скрыть логотип на мобильных устройствах */
+    .logo {
+        display: none;
     }
 }
