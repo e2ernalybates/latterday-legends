@@ -181,7 +181,7 @@ nav ul li a h4:hover::after {
         cursor: pointer;
         background-color: transparent;
         border: none;
-        font-size: 50px;
+        font-size: 30px;
         color: #ffffff;
         padding: 0;
         margin-left: 150px; /* Добавляем отступ справа */
@@ -192,7 +192,7 @@ nav ul li a h4:hover::after {
     .mobile-menu {
         display: none;
         background-color: rgba(54, 54, 54, 0.8);
-        top: 250px;
+        top: 180px;
         right: 5%;
         padding: 10px 20px;
         border-radius: 20px;
@@ -240,7 +240,7 @@ nav ul li a h4:hover::after {
     }
 
     .cart-icon {
-        width: 50px;
+        width: 30px;
         cursor: pointer;
         margin-bottom: 50px;
     }
