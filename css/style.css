@@ -140,7 +140,7 @@ nav ul li a h4:hover::after {
 }
 
 /* Медиа-запрос для мобильных устройств */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1800px) {
     /* Скрыть обычное меню на мобильных устройствах */
     nav ul {
         display: none;
