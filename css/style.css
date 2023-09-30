@@ -82,7 +82,7 @@ nav ul li a h4:hover::after {
     background: url(https://i.imgur.com/jvT9I6M.png);
     -webkit-background-clip: text;
     background-position: 0 0;
-    animation: back 20s linear infinite;
+    animation: back 35s linear infinite;
 }
 
 .button {
