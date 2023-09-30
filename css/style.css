@@ -184,7 +184,7 @@ nav ul li a h4:hover::after {
         font-size: 50px;
         color: #ffffff;
         padding: 0;
-        margin-left: 180px; /* Добавляем отступ справа */
+        margin-left: 150px; /* Добавляем отступ справа */
         margin-right: 10px;
         margin-bottom: 50px;
     }
