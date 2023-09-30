@@ -186,6 +186,7 @@ nav ul li a h4:hover::after {
         padding: 0;
         margin-left: 180px; /* Добавляем отступ справа */
         margin-right: 10px;
+        margin-bottom: 50px;
     }
 
     .mobile-menu {
@@ -229,7 +230,7 @@ nav ul li a h4:hover::after {
 
     .social-icons {
         right: 3%;
-        top: 40%;
+        top: 30%;
         bottom: 5%;
     }
 
@@ -241,6 +242,7 @@ nav ul li a h4:hover::after {
     .cart-icon {
         width: 50px;
         cursor: pointer;
+        margin-bottom: 50px;
     }
 }
 
