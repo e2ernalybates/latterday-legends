@@ -15,8 +15,8 @@
             <a href="https://latterday-legends.online">
                 <img src="images/logo.png" class="logo" alt="Latterday Legends">
             </a>
-            <div class="mobile-menu-button" onclick="toggleMobileMenu()">Меню</div>
-            <div class="mobile-menu" id="mobileMenu">
+            <!-- Добавляем кнопку для открытия бургер-меню на мобильных устройствах -->
+            <div class="mobile-menu-button">&#9776;</div>
             <ul class="nav-list">
                 <li><a href="https://latterday-legends.online" class="button">Главная</a></li>
                 <li><a href="play.html" class="button nav-button">Начать играть</a></li>
@@ -25,7 +25,15 @@
             </ul>
             <a href="donate.html"><img src="images/cart.png" class="cart-icon" alt="Корзина"></a>
         </nav>
-        
+
+        <!-- Добавляем бургер-меню для мобильных устройств -->
+        <div class="mobile-menu">
+            <a href="https://latterday-legends.online" class="button">Главная</a>
+            <a href="play.html" class="button nav-button">Начать играть</a>
+            <a href="forum.html" class="button nav-button">Форум</a>
+            <a href="donate.html" class="button nav-button">Магазин</a>
+        </div>
+
         <div class="text-box">
             <h1>Latterday Legends -</h1>
             <h3>проект сетевой игры CS:GO в SA:MP</h3>
@@ -45,6 +53,23 @@
             </a>
         </div>
     </div>
+    
+    <!-- Добавляем скрипт для управления бургер-меню -->
+    <script>
+        // Получаем элементы бургер-меню и мобильного меню
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        // Добавляем обработчик события для открытия/закрытия мобильного меню
+        mobileMenuButton.addEventListener('click', function () {
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        });
+    </script>
+
 </body>
 
 </html>
