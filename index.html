@@ -16,7 +16,7 @@
                 <img src="images/logo.png" class="logo" alt="Latterday Legends">
             </a>
             <!-- Добавляем кнопку для открытия бургер-меню на мобильных устройствах -->
-            <div class="mobile-menu-button">&#9776;</div>
+            <button class="mobile-menu-button" aria-label="Открыть меню">&#9776;</button>
             <ul class="nav-list">
                 <li><a href="https://latterday-legends.online" class="button">Главная</a></li>
                 <li><a href="play.html" class="button nav-button">Начать играть</a></li>
@@ -27,7 +27,7 @@
         </nav>
 
         <!-- Добавляем бургер-меню для мобильных устройств -->
-        <div class="mobile-menu">
+        <div class="mobile-menu" aria-hidden="true">
             <a href="https://latterday-legends.online" class="button">Главная</a>
             <a href="play.html" class="button nav-button">Начать играть</a>
             <a href="forum.html" class="button nav-button">Форум</a>
@@ -53,20 +53,24 @@
             </a>
         </div>
     </div>
-    
+
     <!-- Добавляем скрипт для управления бургер-меню -->
     <script>
         // Получаем элементы бургер-меню и мобильного меню
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
 
+        // Изначально скрываем бургер-меню
+        mobileMenu.style.display = 'none';
+
         // Добавляем обработчик события для открытия/закрытия мобильного меню
         mobileMenuButton.addEventListener('click', function () {
-            if (mobileMenu.style.display === 'block') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'block';
-            }
+            const isMenuOpen = mobileMenu.style.display === 'block';
+            mobileMenu.style.display = isMenuOpen ? 'none' : 'block';
+
+            // Обновляем атрибут aria-expanded для улучшения доступности
+            mobileMenuButton.setAttribute('aria-expanded', !isMenuOpen);
+            mobileMenu.setAttribute('aria-hidden', isMenuOpen);
         });
     </script>
 
