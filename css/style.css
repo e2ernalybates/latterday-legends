@@ -1,4 +1,4 @@
-/* Общие стили */
+
 * {
     margin: 0;
     padding: 0;
@@ -127,7 +127,7 @@ nav ul li a h4:hover::after {
     font-weight: 500;
 }
 
-
+/* Иконки социальных сетей */
 .social-icons {
     position: absolute;
     right: 5%;
@@ -140,57 +140,56 @@ nav ul li a h4:hover::after {
     margin: 25px 5px;
 }
 
-/* Медиа-запрос для мобильных устройств */
-@media screen and (max-width: 768px) {
+/* Стили для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
     .container {
-        padding: 0 5%; /* Уменьшим отступы по бокам для мобильных устройств */
+        padding: 0 5%;
     }
 
     nav ul {
-        display: none; /* Скроем обычное меню на мобильных устройствах */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
+        text-align: left;
+        padding-right: 0;
     }
 
     nav ul li {
         margin: 10px 0;
     }
 
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
+    .logo {
+        width: 120px; /* Уменьшим размер логотипа */
     }
 
-    .menu-icon {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 30px;
-        color: #fff;
+    .cart-icon {
+        width: 20px; /* Уменьшим размер иконки корзины */
     }
 
-    .menu-icon:hover {
-        color: #fdff6b;
-    }
-
-    .menu-toggle:checked + .menu-icon + .nav-list {
-        display: flex;
+    .text-box {
+        bottom: 5%; /* Переместим текст немного выше */
     }
 
     .text-box h1 {
-        font-size: 60px; /* Уменьшим размер заголовка для мобильных устройств */
-        line-height: 100px; /* Уменьшим межстрочный интервал для мобильных устройств */
+        font-size: 50px; /* Уменьшим размер заголовка */
+        line-height: 80px; /* Уменьшим высоту строки */
+    }
+
+    .button {
+        padding: 10px 20px; /* Уменьшим отступы у кнопок */
+        font-size: 16px; /* Уменьшим размер шрифта кнопок */
+    }
+
+    .nav-button {
+        padding: 6px 12px; /* Уменьшим отступы у кнопок навигации */
+        font-size: 14px; /* Уменьшим размер шрифта кнопок навигации */
     }
 
     .social-icons {
-        bottom: 2%; /* Сдвинем иконки социальных сетей для мобильных устройств */
+        right: 2%; /* Переместим иконки социальных сетей ближе к краю экрана */
+        bottom: 5%; /* Переместим иконки социальных сетей выше */
+    }
+
+    .social-icons img {
+        width: 30px; /* Уменьшим размер иконок социальных сетей */
+        margin: 15px 5px; /* Уменьшим отступы между иконками */
     }
 }
+
