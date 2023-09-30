@@ -141,9 +141,12 @@ nav ul li a h4:hover::after {
 
 /* Медиа-запрос для мобильных устройств */
 @media screen and (max-width: 768px) {
+    /* Скрыть обычное меню на мобильных устройствах */
     nav ul {
         display: none;
     }
+    
+    /* Показать и стилизовать иконку меню */
     #menu-toggle:checked + .menu-icon + .nav-list {
         display: flex;
         flex-direction: column;
@@ -157,8 +160,23 @@ nav ul li a h4:hover::after {
         transform-origin: top;
         transition: transform 0.3s ease-in-out;
     }
-    nav ul li {
-        text-align: center;
-        margin: 10px 0;
+    
+    /* Показать и стилизовать кнопку меню */
+    #menu-toggle + .menu-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    /* Анимация для кнопки меню */
+    #menu-toggle:checked + .menu-icon .bar {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    /* Скрыть логотип на мобильных устройствах */
+    .logo {
+        display: none;
     }
 }
