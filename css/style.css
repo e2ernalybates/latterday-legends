@@ -1,4 +1,4 @@
-
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,6 @@ nav {
     display: flex;
     width: 100%;
     align-items: center;
-    flex-wrap: wrap;
     padding: 5px 0;
 }
 
@@ -38,10 +37,11 @@ nav ul {
     flex: 1;
     text-align: right;
     padding-right: 30px;
+    display: flex; /* Добавьте эту строку */
+    align-items: center; /* Добавьте эту строку */
 }
 
 nav ul li {
-    display: inline-block;
     list-style: none;
     margin: 10px 30px;
 }
@@ -139,11 +139,26 @@ nav ul li a h4:hover::after {
     margin: 25px 5px;
 }
 
+/* Медиа-запрос для мобильных устройств */
 @media screen and (max-width: 768px) {
-    .nav-list {
+    nav ul {
         display: none;
     }
     #menu-toggle:checked + .menu-icon + .nav-list {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+    }
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
     }
 }
