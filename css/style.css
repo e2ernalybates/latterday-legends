@@ -147,7 +147,7 @@ nav ul li a h4:hover::after {
     }
 
     nav ul {
-        display: none; /* Скроем меню на мобильных устройствах */
+        display: none; /* Скроем обычное меню на мобильных устройствах */
         position: absolute;
         top: 60px;
         left: 0;
