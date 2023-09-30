@@ -20,6 +20,7 @@ nav {
     display: flex;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
     padding: 5px 0;
 }
 
@@ -37,11 +38,10 @@ nav ul {
     flex: 1;
     text-align: right;
     padding-right: 30px;
-    display: flex; /* Добавьте эту строку */
-    align-items: center; /* Добавьте эту строку */
 }
 
 nav ul li {
+    display: inline-block;
     list-style: none;
     margin: 10px 30px;
 }
@@ -127,6 +127,7 @@ nav ul li a h4:hover::after {
     font-weight: 500;
 }
 
+
 .social-icons {
     position: absolute;
     right: 5%;
@@ -140,31 +141,56 @@ nav ul li a h4:hover::after {
 }
 
 /* Медиа-запрос для мобильных устройств */
-@media screen and (max-width: 1800px) {
-    /* Скрыть обычное меню на мобильных устройствах */
-    nav ul {
-        display: none;
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 5%; /* Уменьшим отступы по бокам для мобильных устройств */
     }
-    /* Показать и стилизовать иконку меню */
-    #menu-toggle:checked + .menu-icon + .nav-list {
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
+
+    nav ul {
+        display: none; /* Скроем меню на мобильных устройствах */
         position: absolute;
         top: 60px;
-        right: 0;
         left: 0;
-        z-index: 1;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.3s ease-in-out;
-    }
-    nav ul li {
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 100%;
         text-align: center;
+    }
+
+    nav ul li {
         margin: 10px 0;
     }
-    /* Скрыть логотип на мобильных устройствах */
-    .logo {
-        display: none;
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .menu-icon:hover {
+        color: #fdff6b;
+    }
+
+    .menu-toggle:checked + .menu-icon + .nav-list {
+        display: flex;
+    }
+
+    .text-box h1 {
+        font-size: 60px; /* Уменьшим размер заголовка для мобильных устройств */
+        line-height: 100px; /* Уменьшим межстрочный интервал для мобильных устройств */
+    }
+
+    .social-icons {
+        bottom: 2%; /* Сдвинем иконки социальных сетей для мобильных устройств */
     }
 }
