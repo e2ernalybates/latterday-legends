@@ -37,8 +37,8 @@ nav ul {
     flex: 1;
     text-align: right;
     padding-right: 30px;
-    display: flex;
-    align-items: center;
+    display: flex; /* Добавьте эту строку */
+    align-items: center; /* Добавьте эту строку */
 }
 
 nav ul li {
@@ -145,7 +145,6 @@ nav ul li a h4:hover::after {
     nav ul {
         display: none;
     }
-    
     /* Показать и стилизовать иконку меню */
     #menu-toggle:checked + .menu-icon + .nav-list {
         display: flex;
@@ -160,21 +159,10 @@ nav ul li a h4:hover::after {
         transform-origin: top;
         transition: transform 0.3s ease-in-out;
     }
-    
-    /* Показать и стилизовать кнопку меню */
-    #menu-toggle + .menu-icon {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
     }
-    
-    /* Анимация для кнопки меню */
-    #menu-toggle:checked + .menu-icon .bar {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
     /* Скрыть логотип на мобильных устройствах */
     .logo {
         display: none;
