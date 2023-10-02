@@ -1,40 +1,86 @@
 /* General styles */
 body {
     overflow: hidden; /* Убираем скролл бар */
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Цвет фона изменен на темный серый */
 }
 
 .container {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
-                      url(https://i.imgur.com/A67ycDH.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url('https://dmarket.com/blog/best-csgo-wallpapers/cs-go-wallpaper_hub6d22fdcaa8629b6f1a6781f6a106093_183473_1920x1080_resize_q100_lanczos.jpg');
     background-size: cover;
     background-position: center;
     padding: 0 5%;
     position: relative;
     overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Form styles */
+.donateHero {
+    font-family: Acrom, sans-serif;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень формы */
+    text-align: center; /* Центрирование текста в форме */
+}
+
+.donateHero-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Центрирование текста в заголовке */
+}
+
+.donateHero-title span {
+    display: flex;
+    align-items: center;
+}
+
+/* Description styles */
+.donateHero__desc {
+    font-family: Acrom;
+    color: #fff;
+    max-width: 413px;
+    margin-top: 20px;
+}
+
+/* Form item styles */
 .donateHero__groups-item {
     display: flex;
     align-items: center;
     max-width: 320px;
     gap: 20px;
-    outline: 0;
-    margin-top: 40px;
+    margin: 20px auto; /* Центрирование элементов формы */
+    position: relative;
 }
 
 .donateHero__groups-item input,
 .donateHero__groups-item select {
-    font-family: Acrom;
+    font-family: Acrom, sans-serif;
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid transparent; /* Убираем обводку полей */
+    border-radius: 10px; /* Более заметное скругление углов полей */
     font-size: 16px;
-    background-color: #ffffff;
-    color: #313030;
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+    color: #333; /* Темный цвет текста */
     outline: 0;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Добавим эффект при фокусировке на полях ввода */
+.donateHero__groups-item input:focus,
+.donateHero__groups-item select:focus {
+    border-color: #007bff; /* Изменение цвета границы при фокусировке */
+    background-color: rgba(255, 255, 255, 0.8); /* Немного более яркий фон */
 }
 
 .donateHero__groups-item input::placeholder,
@@ -47,6 +93,7 @@ body {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    color: #007bff; /* Цвет меток для привлечения внимания */
 }
 
 /* Button styles */
@@ -55,87 +102,141 @@ body {
     width: 320px;
     padding: 16px;
     border: 0;
-    border-radius: 8px;
-    font-family: Acrom;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+    border-radius: 10px; /* Более заметное скругление углов кнопки */
+    font-family: Acrom, sans-serif;
+    font-weight: 700; /* Увеличиваем жирность шрифта для более выразительного вида */
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    line-height: 22px; /* Увеличиваем высоту строки для лучшей читаемости */
     color: #fff;
-    background: linear-gradient(116.85deg, #c0fb1dfd 18.07%, #ace2d6 83.92%);
-    box-shadow: 0 4px 80px rgba(157, 240, 24, 0.5);
-    transition: background 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%); /* Красный цвет кнопки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     margin-top: 50px;
 }
 
 .buyHero__btn:hover {
-    background: linear-gradient(116.85deg, #ace2d6 18.07%, #c0fb1dfd 83.92%);
-    transform: translateY(-2px);
+    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%); /* Красный цвет кнопки при наведении */
+    transform: translateY(-4px); /* Поднимаем кнопку при наведении */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Более заметная тень при наведении */
 }
 
-/* Title styles */
-.donateHero-title {
-    font-family: Acrom;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 40px;
-    color: #fff;
-    display: flex;
-    gap: 10px;
-    max-width: 195px;
-    margin-left: 120px;
-    transition: all 0.2s ease;
+.buyHero__btn:active {
+    background: linear-gradient(116.85deg, #f36666 18.07%, #ff5c5c 83.92%); /* Красный цвет кнопки при нажатии */
+    transform: translateY(2px); /* Нажатие кнопки */
+    box-shadow: none; /* Убираем тень */
 }
 
-/* Container specific styles */
-.donateHero {
-    font-family: Acrom;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    padding-top: 200px;
-    line-height: 1;
-}
-
-.donateHero__groups {
-    font-family: Acrom;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    line-height: 1;
-}
-
-/* Description styles */
-.donateHero__desc {
-    font-family: Acrom;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    max-width: 413px;
-    display: none;
-    z-index: 5;
-    position: absolute;
-}
 
 /* Method pay styles */
-.method_pay {
-    font-family: Acrom;
-    font-size: 16px;
-    line-height: 1;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    vertical-align: top;
+.method_pay img {
+    max-width: 32px;
+    max-height: 32px;
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 6px;
+    transition: background-color 0.3s ease;
 }
 
-/* Disabled option styles */
-.donateHero__groups-item select option[disabled] {
-    color: #ccc;
+.method_pay img:hover {
+    background-color: #0056b3;
 }
+
+/* ... Ваш существующий код ... */
+
+/* Стили для блока текста и кнопки "Задать вопрос" */
+.question-section {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 20px; /* Добавляем небольшой отступ от нижнего края */
+    background-color: transparent; /* Прозрачный фон */
+    padding: 10px; /* Добавляем внутренний отступ */
+    border-radius: 10px; /* Скругляем углы блока */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Прозрачная белая обводка */
+}
+
+.question-section__title {
+    font-family: Acrom;
+    font-size: 16px; /* Уменьшаем размер текста */
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.question__btn {
+    display: inline-block;
+    text-decoration: none;
+    font-family: Acrom;
+    font-weight: 700;
+    font-size: 16px; /* Устанавливаем размер текста равным размеру кнопки */
+    color: #fff;
+    background-color: #007bff; /* Синий цвет фона кнопки */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Добавляем позиционирование для анимации */
+    overflow: hidden; /* Скрываем "лишний" контент */
+}
+
+.question__btn::before {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2); /* Цвет анимации */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.question__btn:hover::before {
+    transform: translateX(0);
+}
+
+.question__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Acrom;
+    font-weight: 700;
+    font-size: 16px; /* Устанавливаем размер текста равным размеру кнопки */
+    color: #fff;
+    background-color: #007bff; /* Синий цвет фона кнопки */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Добавляем позиционирование для анимации */
+    overflow: hidden; /* Скрываем "лишний" контент */
+    border: 2px solid #007bff; /* Добавляем белую обводку */
+}
+
+.question__btn i {
+    margin-left: 5px; /* Добавляем небольшой отступ между текстом и иконкой */
+}
+
+/* Добавьте стили для контейнера с кнопкой и иконкой */
+.question-btn-container {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    justify-content: center; /* Выравнивание элементов по горизонтали */
+    margin-top: 10px; /* Небольшой отступ сверху */
+}
+
+/* Стили для иконки */
+.question-icon {
+    margin-left: 10px; /* Отступ между кнопкой и иконкой */
+    max-width: 24px; /* Максимальная ширина иконки */
+    max-height: 24px; /* Максимальная высота иконки */
+}
+
+/* Другие стили для текста и кнопки остаются без изменений */
+
+
+
+
+
