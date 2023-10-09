@@ -1,9 +1,9 @@
 /* General styles */
 body {
-    overflow: hidden; /* Убираем скролл бар */
+    overflow: hidden;
     margin: 0;
     padding: 0;
-    background-color: #333; /* Цвет фона изменен на темный серый */
+    background-color: #333;
 }
 
 .container {
@@ -13,7 +13,6 @@ body {
     background-position: center;
     padding: 0 5%;
     position: relative;
-    overflow-y: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,8 +24,9 @@ body {
     color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень формы */
-    text-align: center; /* Центрирование текста в форме */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 100%;
 }
 
 .donateHero-title {
@@ -36,7 +36,7 @@ body {
     color: #fff;
     display: flex;
     gap: 10px;
-    justify-content: center; /* Центрирование текста в заголовке */
+    justify-content: center;
 }
 
 .donateHero-title span {
@@ -58,7 +58,7 @@ body {
     align-items: center;
     max-width: 320px;
     gap: 20px;
-    margin: 20px auto; /* Центрирование элементов формы */
+    margin: 20px auto;
     position: relative;
 }
 
@@ -67,20 +67,19 @@ body {
     font-family: Acrom, sans-serif;
     width: 100%;
     padding: 10px;
-    border: 2px solid transparent; /* Убираем обводку полей */
-    border-radius: 10px; /* Более заметное скругление углов полей */
+    border: 2px solid transparent;
+    border-radius: 10px;
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
-    color: #333; /* Темный цвет текста */
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
     outline: 0;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Добавим эффект при фокусировке на полях ввода */
 .donateHero__groups-item input:focus,
 .donateHero__groups-item select:focus {
-    border-color: #007bff; /* Изменение цвета границы при фокусировке */
-    background-color: rgba(255, 255, 255, 0.8); /* Немного более яркий фон */
+    border-color: #007bff;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .donateHero__groups-item input::placeholder,
@@ -88,12 +87,11 @@ body {
     color: #4d4d4d;
 }
 
-/* Label styles */
 .donateHero__groups-item label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    color: #007bff; /* Цвет меток для привлечения внимания */
+    color: #007bff;
 }
 
 /* Button styles */
@@ -102,30 +100,29 @@ body {
     width: 320px;
     padding: 16px;
     border: 0;
-    border-radius: 10px; /* Более заметное скругление углов кнопки */
+    border-radius: 10px;
     font-family: Acrom, sans-serif;
-    font-weight: 700; /* Увеличиваем жирность шрифта для более выразительного вида */
-    font-size: 18px; /* Увеличиваем размер шрифта */
-    line-height: 22px; /* Увеличиваем высоту строки для лучшей читаемости */
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
     color: #fff;
-    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%); /* Красный цвет кнопки */
+    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     margin-top: 50px;
 }
 
 .buyHero__btn:hover {
-    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%); /* Красный цвет кнопки при наведении */
-    transform: translateY(-4px); /* Поднимаем кнопку при наведении */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Более заметная тень при наведении */
+    background: linear-gradient(116.85deg, #ff5c5c 18.07%, #f36666 83.92%);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
 .buyHero__btn:active {
-    background: linear-gradient(116.85deg, #f36666 18.07%, #ff5c5c 83.92%); /* Красный цвет кнопки при нажатии */
-    transform: translateY(2px); /* Нажатие кнопки */
-    box-shadow: none; /* Убираем тень */
+    background: linear-gradient(116.85deg, #f36666 18.07%, #ff5c5c 83.92%);
+    transform: translateY(2px);
+    box-shadow: none;
 }
-
 
 /* Method pay styles */
 .method_pay img {
@@ -150,50 +147,18 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    margin-bottom: 20px; /* Добавляем небольшой отступ от нижнего края */
-    background-color: transparent; /* Прозрачный фон */
-    padding: 10px; /* Добавляем внутренний отступ */
-    border-radius: 10px; /* Скругляем углы блока */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Прозрачная белая обводка */
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .question-section__title {
     font-family: Acrom;
-    font-size: 16px; /* Уменьшаем размер текста */
+    font-size: 16px;
     color: #fff;
     margin-bottom: 10px;
-}
-
-.question__btn {
-    display: inline-block;
-    text-decoration: none;
-    font-family: Acrom;
-    font-weight: 700;
-    font-size: 16px; /* Устанавливаем размер текста равным размеру кнопки */
-    color: #fff;
-    background-color: #007bff; /* Синий цвет фона кнопки */
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-    position: relative; /* Добавляем позиционирование для анимации */
-    overflow: hidden; /* Скрываем "лишний" контент */
-}
-
-.question__btn::before {
-    content: "";
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2); /* Цвет анимации */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.question__btn:hover::before {
-    transform: translateX(0);
 }
 
 .question__btn {
@@ -203,40 +168,55 @@ body {
     text-decoration: none;
     font-family: Acrom;
     font-weight: 700;
-    font-size: 16px; /* Устанавливаем размер текста равным размеру кнопки */
+    font-size: 16px;
     color: #fff;
-    background-color: #007bff; /* Синий цвет фона кнопки */
+    background-color: #007bff;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-    position: relative; /* Добавляем позиционирование для анимации */
-    overflow: hidden; /* Скрываем "лишний" контент */
-    border: 2px solid #007bff; /* Добавляем белую обводку */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #007bff;
 }
 
 .question__btn i {
-    margin-left: 5px; /* Добавляем небольшой отступ между текстом и иконкой */
+    margin-left: 5px;
 }
 
 /* Добавьте стили для контейнера с кнопкой и иконкой */
 .question-btn-container {
     display: flex;
-    align-items: center; /* Выравнивание элементов по вертикали */
-    justify-content: center; /* Выравнивание элементов по горизонтали */
-    margin-top: 10px; /* Небольшой отступ сверху */
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 /* Стили для иконки */
 .question-icon {
-    margin-left: 10px; /* Отступ между кнопкой и иконкой */
-    max-width: 24px; /* Максимальная ширина иконки */
-    max-height: 24px; /* Максимальная высота иконки */
+    margin-left: 10px;
+    max-width: 24px;
+    max-height: 24px;
 }
 
-/* Другие стили для текста и кнопки остаются без изменений */
-
-
-
-
-
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Увеличиваем внутренний отступ на мобильных устройствах */
+    }
+    .donateHero-title {
+        font-size: 24px; /* Уменьшаем размер заголовка на мобильных устройствах */
+    }
+    .donateHero__groups-item {
+        flex-direction: column; /* Отображаем элементы формы в столбец на мобильных устройствах */
+        max-width: 100%;
+        margin: 5px 0;
+    }
+    .buyHero__btn {
+        width: 100%; /* Растягиваем кнопку на всю ширину экрана на мобильных устройствах */
+        margin-top: 10px; /* Увеличиваем отступ от кнопки на мобильных устройствах */
+    }
+    .question-section {
+        margin-bottom: 0; /* Убираем отступ снизу на мобильных устройствах */
+        padding: 5px; /* Уменьшаем внутренний отступ на мобильных устройствах */
+    }
+}
