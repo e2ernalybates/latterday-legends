@@ -37,8 +37,51 @@
                     </a>
                 </div>
             </div>
+            <div class="ip-info" style="text-align: center; margin-top: 20px;">
+                <p>Наш IP : <span id="serverIP">777:777</span></p>
+                <button id="addIPButton" class="btn btn-custom">Добавить</button>
+            </div>
         </div>
         <!-- End Play Hero Section -->
     </div>
+
+    <!-- Модальное окно -->
+    <div class="modal-overlay" style="display: none;">
+        <div class="modal">
+            <p>IP-адрес скопирован в буфер обмена!</p>
+            <p>Запустите Latterday Legends.exe > Галочка > Добавить</p>
+        </div>
+    </div>
+
+    <!-- JavaScript для обработки кнопки "Добавить" и копирования IP в буфер обмена -->
+    <script>
+        // Функция, которая копирует IP-адрес в буфер обмена и показывает модальное окно
+        function copyIPToClipboard() {
+            const serverIP = document.getElementById('serverIP');
+            const ipText = serverIP.innerText;
+
+            const textArea = document.createElement('textarea');
+            textArea.value = ipText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            // Показываем модальное окно
+            const modalOverlay = document.querySelector('.modal-overlay');
+            modalOverlay.style.display = 'block';
+
+            // Скрываем модальное окно через несколько секунд
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+            }, 3000);
+        }
+
+        // Добавляем обработчик для кнопки "Добавить"
+        const addIPButton = document.getElementById('addIPButton');
+        addIPButton.addEventListener('click', () => {
+            copyIPToClipboard();
+        });
+    </script>
 </body>
 </html>
