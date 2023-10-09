@@ -1,11 +1,11 @@
-/* Global Styles */
+/* Глобальные стили */
 body {
     margin: 0;
     padding: 0;
     font-family: Acrom, sans-serif;
 }
 
-/* Container Styles */
+/* Стили контейнера */
 .container {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url('https://i.imgur.com/rjQNP2j.jpg');
@@ -19,7 +19,7 @@ body {
     justify-content: center;
 }
 
-/* Play Hero Section Styles */
+/* Стили раздела главной страницы */
 .playHero {
     color: #fff;
     padding: 0;
@@ -48,6 +48,7 @@ body {
     letter-spacing: -.05em;
     text-transform: uppercase;
     margin-bottom: 20px;
+    animation: slideInLeft 1s ease;
 }
 
 .playHero__item-text {
@@ -57,9 +58,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: slideInRight 1s ease;
 }
 
-/* Button Styles */
+/* Стили кнопок */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -82,7 +84,7 @@ body {
 .btn-secondary {
     border: 1px solid #FF0073;
     background-color: transparent;
-    color: #FF0073;
+    color: #ffffff;
 }
 
 .btn-secondary:hover {
@@ -90,10 +92,90 @@ body {
     color: #fff;
 }
 
-/* Image Styles */
+/* Стили изображений */
 img[src="images/vk_play.png"] {
     vertical-align: middle;
     margin-left: 5px;
-    width: 20px; /* Adjust the size as needed */
-    height: 20px; /* Adjust the size as needed */
+    width: 20px;
+    height: 20px;
 }
+
+/* Добавляем стили для кастомной кнопки */
+.btn-custom {
+    background-color: #61c510;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Добавляем анимационные стили при наведении и активации */
+.btn-custom:hover {
+    background-color: #61c510;
+    transform: scale(1.1);
+}
+
+.btn-custom:active {
+    background-color: #61c510;
+}
+
+/* Анимация появления элементов */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Стили модального окна */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Добавьте анимацию появления модального окна */
+.modal.show-modal {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
