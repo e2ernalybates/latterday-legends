@@ -53,26 +53,42 @@
                 <img src="images/youtube.png" alt="YouTube">
             </a>
         </div>
+        <div id="visitor-counter" class="visitor-counter">
+            Наш сайт посетили: <span id="count">0</span> раз.
+        </div>
     </div>
 
-    <!-- Добавляем скрипт для управления бургер-меню -->
     <script>
-        // Получаем элементы бургер-меню и мобильного меню
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        // Функция для увеличения счетчика посетителей
+        function increaseVisitorCount() {
+            // Проверяем, было ли установлено cookie с счетчиком
+            if (document.cookie.indexOf('visitorCount=') === -1) {
+                // Если нет, устанавливаем его в 0
+                document.cookie = 'visitorCount=0';
+            }
 
-        // Изначально скрываем бургер-меню
-        mobileMenu.style.display = 'none';
+            // Получаем текущее значение счетчика из cookie
+            const cookies = document.cookie.split(';');
+            let visitorCount = 0;
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith('visitorCount=')) {
+                    visitorCount = parseInt(cookie.split('=')[1]);
+                    break;
+                }
+            }
 
-        // Добавляем обработчик события для открытия/закрытия мобильного меню
-        mobileMenuButton.addEventListener('click', function () {
-            const isMenuOpen = mobileMenu.style.display === 'block';
-            mobileMenu.style.display = isMenuOpen ? 'none' : 'block';
+            // Увеличиваем счетчик
+            visitorCount++;
+            // Устанавливаем обновленное значение в cookie
+            document.cookie = `visitorCount=${visitorCount}; max-age=180`; // max-age в секундах (180 секунд = 3 минуты)
 
-            // Обновляем атрибут aria-expanded для улучшения доступности
-            mobileMenuButton.setAttribute('aria-expanded', !isMenuOpen);
-            mobileMenu.setAttribute('aria-hidden', isMenuOpen);
-        });
+            // Отображаем счетчик на странице
+            document.getElementById('count').textContent = visitorCount;
+        }
+
+        // Вызываем функцию при загрузке страницы
+        increaseVisitorCount();
     </script>
 
 </body>
