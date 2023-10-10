@@ -96,6 +96,11 @@
             hideWelcomeMenu(); // Скрываем меню
         });
 
+        // Проверяем, была ли кнопка "Начать" нажата при предыдущих посещениях
+        if (document.cookie.indexOf('startButtonClicked=true') !== -1) {
+            hideWelcomeMenu(); // Если кнопка была нажата, скрываем меню при следующем посещении
+        }
+
     </script>
 
 </body>
