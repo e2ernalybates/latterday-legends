@@ -13,8 +13,9 @@
     <div class="welcome-menu">
         <h1>Добро пожаловать на наш сайт</h1>
         <p>Здесь вы найдете всю необходимую информацию о нашем проекте</p>
-        <a href="https://latterday-legends.online" class="button">Начать</a>
+        <a href="https://latterday-legends.online" class="button" id="start-button">Начать</a>
     </div>
+    
     <div class="container">
         <nav>
             <a href="https://latterday-legends.online">
@@ -92,8 +93,28 @@
             document.getElementById('count').textContent = visitorCount;
         }
 
+        // Функция для скрытия меню приветствия после нажатия кнопки "Начать"
+        function hideWelcomeMenu() {
+            const welcomeMenu = document.querySelector('.welcome-menu');
+            welcomeMenu.style.display = 'none';
+        }
+
         // Вызываем функцию при загрузке страницы
         increaseVisitorCount();
+
+        // Проверяем, была ли нажата кнопка "Начать" ранее
+        const startButton = document.getElementById('start-button');
+        startButton.addEventListener('click', function () {
+            // Устанавливаем cookie, чтобы помнить, что кнопка "Начать" была нажата
+            document.cookie = 'startButtonClicked=true';
+            hideWelcomeMenu(); // Скрываем меню
+        });
+
+        // Проверяем, была ли кнопка "Начать" нажата при предыдущих посещениях
+        if (document.cookie.indexOf('startButtonClicked=true') !== -1) {
+            hideWelcomeMenu(); // Если кнопка была нажата, скрываем меню при следующем посещении
+        }
+
     </script>
 
 </body>
