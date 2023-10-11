@@ -27,7 +27,7 @@
                 <li><a href="https://latterday-legends.online" class="button">Главная</a></li>
                 <li><a href="play.html" class="button nav-button">Начать играть</a></li>
                 <li><a href="forum.html" class="button nav-button">Форум</a></li>
-                <li><a href="donate.html" class="button nav-button">Магазин</a></li>
+                <li><a href="donate.html" class "button nav-button">Магазин</a></li>
             </ul>
             <a href="donate.html"><img src="images/cart.png" class="cart-icon" alt="Корзина"></a>
         </nav>
@@ -79,27 +79,17 @@
             mobileMenu.setAttribute('aria-hidden', isMenuOpen);
         });
 
-        // Функция для скрытия меню приветствия после нажатия кнопки "Начать"
+        // Функция для скрытия меню приветствия
         function hideWelcomeMenu() {
             const welcomeMenu = document.querySelector('.welcome-menu');
             welcomeMenu.style.display = 'none';
         }
 
-        // Вызываем функцию при загрузке страницы
-        increaseVisitorCount();
-
-        // Проверяем, была ли нажата кнопка "Начать" ранее
+        // Вызываем функцию при нажатии кнопки "Начать"
         const startButton = document.getElementById('start-button');
         startButton.addEventListener('click', function () {
-            // Устанавливаем cookie, чтобы помнить, что кнопка "Начать" была нажата
-            document.cookie = 'startButtonClicked=true';
-            hideWelcomeMenu(); // Скрываем меню
+            hideWelcomeMenu();
         });
-
-        // Проверяем, была ли кнопка "Начать" нажата при предыдущих посещениях
-        if (document.cookie.indexOf('startButtonClicked=true') !== -1) {
-            hideWelcomeMenu(); // Если кнопка была нажата, скрываем меню при следующем посещении
-        }
 
     </script>
 
