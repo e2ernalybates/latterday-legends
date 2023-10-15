@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="playHero__item-buttons">
-                    <a href="https://drive.google.com/u/0/uc?id=1CIlBxdf0u8wn4BFCOdk-AEJoxRJHFNlG&export=download&confirm=t&uuid=0682f62f-edcf-4b88-b82c-012d5d6af0b5&at=AB6BwCBnffJDFaCg_mVg3J_vdNhr:1696581726739" class="btn btn-primary playHero__item-buttons-dwn">Скачать SAMP
+                    <a href="#" class="btn btn-primary playHero__item-buttons-dwn">Скачать
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- SVG Content -->
                         </svg>
@@ -45,42 +45,39 @@
         <!-- End Play Hero Section -->
     </div>
 
-    <!-- Модальное окно -->
-    <div class="modal-overlay" style="display: none;">
-        <div class="modal">
-            <p>IP-адрес скопирован в буфер обмена!</p>
-            <p>Запустите Latterday Legends.exe > Галочка > Добавить</p>
+    <!-- Модальное окно выбора загрузки -->
+    <div class="download-overlay" style="display: none;">
+        <div class="download-modal">
+            <p>Выберите, что вы хотите скачать:</p>
+            <a href="//www.dropbox.com/pri/get/%5BGTA%5D%20Latterday%20Legends.exe?_download_id=719626143528997778686738665666669327697167305895253646366559954&_notify_domain=www.dropbox.com&_subject_uid=953810419&w=AADa9nLFylU83s5o6FKcG1ApZpIEOeNFA7iuUJG5O49ltg"> <button class="btn btn-primary download-full">Скачать full сборку</button></a>
+            <a href="//www.dropbox.com/pri/get/%5BFILE-s%5D%20Latterday%20Legends.exe?_download_id=701955230862388438070434351268182822970871392825889146183934437&_notify_domain=www.dropbox.com&_subject_uid=953810419&w=AADb9EaWg_2Z6SvXyY3u_T4l4buX-wjOThEzN7K479p0NQ"> <button class="btn btn-primary download-files">Скачать только файлы игры</button> </a>
+            <button class="btn btn-secondary close-download-modal">Закрыть</button>
         </div>
     </div>
 
-    <!-- JavaScript для обработки кнопки "Добавить" и копирования IP в буфер обмена -->
+    <!-- JavaScript для обработки событий -->
     <script>
-        // Функция, которая копирует IP-адрес в буфер обмена и показывает модальное окно
-        function copyIPToClipboard() {
-            const serverIP = document.getElementById('serverIP');
-            const ipText = serverIP.innerText;
+        document.querySelector('.playHero__item-buttons-dwn').addEventListener('click', (event) => {
+            event.preventDefault();
+            const downloadOverlay = document.querySelector('.download-overlay');
+            downloadOverlay.style.display = 'flex';
+            downloadOverlay.querySelector('.download-modal').classList.add('show-modal');
+        });
 
-            const textArea = document.createElement('textarea');
-            textArea.value = ipText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
+        document.querySelector('.close-download-modal').addEventListener('click', () => {
+            const downloadOverlay = document.querySelector('.download-overlay');
+            downloadOverlay.style.display = 'none';
+            downloadOverlay.querySelector('.download-modal').classList.remove('show-modal');
+        });
 
-            // Показываем модальное окно
-            const modalOverlay = document.querySelector('.modal-overlay');
-            modalOverlay.style.display = 'block';
+        document.querySelector('.download-full').addEventListener('click', () => {
+            // Добавьте здесь действие для скачивания full сборки
+            alert('Вы выбрали скачать full сборку.');
+        });
 
-            // Скрываем модальное окно через несколько секунд
-            setTimeout(() => {
-                modalOverlay.style.display = 'none';
-            }, 3000);
-        }
-
-        // Добавляем обработчик для кнопки "Добавить"
-        const addIPButton = document.getElementById('addIPButton');
-        addIPButton.addEventListener('click', () => {
-            copyIPToClipboard();
+        document.querySelector('.download-files').addEventListener('click', () => {
+            // Добавьте здесь действие для скачивания только файлов игры
+            alert('Вы выбрали скачать только файлы игры.');
         });
     </script>
 </body>
