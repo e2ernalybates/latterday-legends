@@ -179,3 +179,68 @@ img[src="images/vk_play.png"] {
     }
 }
 
+
+/* Стили для кнопки "Скачать SAMP" */
+.btn-primary {
+    background-color: #FF0073;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #FF0073;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background-color: #e60068;
+    transform: scale(1.05);
+}
+
+/* Стили для кнопки "Закрыть" */
+.btn-secondary {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #222;
+    transform: scale(1.05);
+}
+
+/* Стили для мини-окна выбора загрузки */
+.download-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.download-modal {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.download-modal.show-modal {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
