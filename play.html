@@ -44,10 +44,8 @@
         </div>
         <!-- End Play Hero Section -->
     </div>
-
-    <!-- Модальное окно выбора загрузки -->
     <div class="download-overlay" style="display: none;">
-        <div class="download-modal">
+        <div class="download-modal modal">
             <p>Выберите, что вы хотите скачать:</p>
             <a href="//www.dropbox.com/pri/get/%5BGTA%5D%20Latterday%20Legends.exe?_download_id=719626143528997778686738665666669327697167305895253646366559954&_notify_domain=www.dropbox.com&_subject_uid=953810419&w=AADa9nLFylU83s5o6FKcG1ApZpIEOeNFA7iuUJG5O49ltg"> <button class="btn btn-primary download-full">Скачать full сборку</button></a>
             <a href="//www.dropbox.com/pri/get/%5BFILE-s%5D%20Latterday%20Legends.exe?_download_id=701955230862388438070434351268182822970871392825889146183934437&_notify_domain=www.dropbox.com&_subject_uid=953810419&w=AADb9EaWg_2Z6SvXyY3u_T4l4buX-wjOThEzN7K479p0NQ"> <button class="btn btn-primary download-files">Скачать только файлы игры</button> </a>
@@ -55,8 +53,42 @@
         </div>
     </div>
 
+    <div class="download-overlay-IP" style="display: none;">
+        <div class="download-modal modal">
+            <h4>IP-адрес скопирован в буфер обмена.</h4>
+            <h5>Для добавления, запустите Latterday Legends.exe >> Нажмите на галочку >> Вставьте наш IP >> Нажмите 'Ок'</h5>
+            <h5>Далее сервер появится в списке доступных нажмите по нему 2-жды >> Connect</h5>
+            <h4>ДЛЯ ОПТИМАЛЬНОГО ИГРОВОГО ОПЫТА И ДОСТУПА КО ВСЕМ КАРТАМ, ЗАГРУЗИТЕ НЕОБХОДИМЫЕ ФАЙЛЫ НАШЕЙ ИГРЫ.</h4>
+        </div>
+    </div>
+
     <!-- JavaScript для обработки событий -->
     <script>
+        function copyIPToClipboard() {
+            const serverIP = document.getElementById('serverIP');
+            const ipText = serverIP.innerText;
+        
+            const textArea = document.createElement('textarea');
+            textArea.value = ipText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        
+            // Показываем модальное окно
+            const modalOverlay = document.querySelector('.download-overlay-IP');
+            modalOverlay.style.display = 'flex';
+        
+            // Скрываем модальное окно через несколько секунд
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+            }, 4000);
+        }
+        const addIPButton = document.getElementById('addIPButton');
+        addIPButton.addEventListener('click', () => {
+            copyIPToClipboard();
+        });
+
         document.querySelector('.playHero__item-buttons-dwn').addEventListener('click', (event) => {
             event.preventDefault();
             const downloadOverlay = document.querySelector('.download-overlay');
