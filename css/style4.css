@@ -232,6 +232,20 @@ img[src="images/vk_play.png"] {
     display: flex;
 }
 
+.download-overlay-IP {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 .download-modal {
     background: #fff;
     border-radius: 5px;
