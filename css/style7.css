@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    background-color: #333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.above-text-image {
+    width: 5%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+footer img {
+    width: 5%;
+    max-height: 100vh;
+    object-fit: cover;
+    transform: translateY(110px);
+}
+
+footer p {
+    transform: translateY(40px);
+    position: relative;
+    right: -70px;
+    font-family: "Montserrat", sans-serif;
+    margin: 3px 0;
+}
+
+footer h4 {
+    right: -135px;
+    position: relative;
+}
+
+header img {
+    width: 40%;
+}
+
+.post {
+    margin-left: 100px;
+}
+
+header a img {
+    width: 5%;
+    position: relative;
+    left: -420px;
+    margin-bottom: 180px;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.slideshow-container {
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -20px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.thumbnail-container {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 95px;
+}
+
+.thumbnail {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.thumbnail.active {
+    border: 2px solid #333;
+}
