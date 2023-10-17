@@ -16,7 +16,7 @@
         <img src="https://i.imgur.com/wTlMslA.png" alt="" class="post">
         <a href="#" id="openVideoModal">
             <img src="images/playvd.png" alt="Запустить видео">
-        </a>     
+        </a> 
     </header>
     <main>
         <section>
@@ -64,7 +64,7 @@
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeVideoModal">&times;</span>
-            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=YP8y37-llgU" frameborder="0" allowfullscreen></iframe>
+            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -132,9 +132,23 @@
         thumbnails[slideIndex - 1].classList.add("active");
         }
 
-        // Пометить первую миниатюру и отобразить первое изображение
-        var slideIndex = 1;
-        showSlides(slideIndex);
+        var openVideoModal = document.getElementById('openVideoModal');
+        var videoModal = document.getElementById('videoModal');
+        var closeVideoModal = document.getElementById('closeVideoModal');
+        var videoFrame = document.getElementById('videoFrame');
+
+        openVideoModal.addEventListener('click', function() {
+            // Здесь устанавливаем src iframe на ваше видео с YouTube
+            videoFrame.src = 'https://www.youtube.com/embed/_GDyiRYkbMk';
+            videoModal.style.display = 'block';
+        });
+
+        closeVideoModal.addEventListener('click', function() {
+            // Очищаем src iframe при закрытии модального окна
+            videoFrame.src = '';
+            videoModal.style.display = 'none';
+        });
+
 
     </script>
 </body>
