@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/avaGroup.png">
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="css/style7.css">
+    <title>Latterday Legends | Мы открылись</title>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Your Image Description" class="above-text-image">
+        <h1>Latterday Legends | Мы открылись!</h1>
+        <img src="https://i.imgur.com/wTlMslA.png" alt="" class="post">
+        <a href="#" id="openVideoModal">
+            <img src="images/playvd.png" alt="Запустить видео">
+        </a>     
+    </header>
+    <main>
+        <section>
+            <p>Мы кароч жестко открылись так что сосите хуйца пж</p>
+            <h2>Ладно рофлю не обижайтесь</h2>
+        </section>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="https://i.pinimg.com/564x/61/e1/59/61e159f04a5adac32192c41fcb37a645.jpg" alt="Image 1">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://i.pinimg.com/736x/00/13/85/0013859f5cedf8debe5f518e7b06ddfb.jpg" alt="Image 2">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://i.pinimg.com/564x/03/2f/5f/032f5f804a256a22cfa0dfc00b3df2d7.jpg" alt="Image 3">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="thumbnail-container">
+          <div class="thumbnail" onclick="currentSlide(1)">
+            <img src="https://i.pinimg.com/564x/61/e1/59/61e159f04a5adac32192c41fcb37a645.jpg" alt="Thumbnail 1">
+          </div>
+          <div class="thumbnail" onclick="currentSlide(2)">
+            <img src="https://i.pinimg.com/736x/00/13/85/0013859f5cedf8debe5f518e7b06ddfb.jpg" alt="Thumbnail 2">
+          </div>
+          <div class="thumbnail" onclick="currentSlide(3)">
+            <img src="https://i.pinimg.com/564x/03/2f/5f/032f5f804a256a22cfa0dfc00b3df2d7.jpg" alt="Thumbnail 3">
+          </div>
+        </div>
+        <br>
+        <br>
+        <h2>Дальше ебучий текст типо</h2>
+        <p>Текст....</p>
+    </main>
+    <footer>
+        <img src="https://i.imgur.com/VHH5wO1.png" alt="Your Image Description" class="above-text-image">
+        <p>ATTERDAY</p>
+        <p>EGENDS</p>
+        <h4>&copy;2023</h4>
+    </footer>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeVideoModal">&times;</span>
+            <iframe width="560" height="315" src="#" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        var openVideoModal = document.getElementById('openVideoModal');
+        var videoModal = document.getElementById('videoModal');
+        var closeVideoModal = document.getElementById('closeVideoModal');
+
+        openVideoModal.addEventListener('click', function() {
+            videoModal.style.display = 'block';
+        });
+
+        closeVideoModal.addEventListener('click', function() {
+            videoModal.style.display = 'none';
+        });
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        
+        if (n > slides.length) {
+        slideIndex = 1;
+        }
+        if (n < 1) {
+        slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var thumbnails = document.getElementsByClassName("thumbnail");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].classList.remove("active");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        thumbnails[slideIndex - 1].classList.add("active");
+        }
+
+        // Пометить первую миниатюру и отобразить первое изображение
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+    </script>
+</body>
+</html>

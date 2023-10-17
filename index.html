@@ -35,6 +35,7 @@
             <ul class="nav-list">
                 <li><a href="play.html" class="button">Начать играть</a></li>
                 <li><a href="forum.html" class="button nav-button">Форум</a></li>
+                <button id="scrollButton" class="button nav-button">Новости проекта</button>
                 <li><a href="donate.html" class="button nav-button">Магазин</a></li>
             </ul>
             <a href="donate.html"><img src="images/cart.png" class="cart-icon" alt="Корзина"></a>
@@ -68,26 +69,36 @@
             </div>
         </div>
     </div>
-    <div class="menu">
-        <div class="menu-item active">
-            <img src="https://i.pinimg.com/564x/88/81/a3/8881a3d84b72481b66cc6f086e131935.jpg" alt="Изображение" class="menu-image">
-            <div class="menu-content">
-                <h2>Мы открылись!</h2>
-                <p>Кароч ебу какой то текст хочешь узнаь больше жми "Подробнее"</p>
-                <a href="#" class="button">Подробнее</a>
+    
+    <div class="posts container">
+        <div class="posts__title section-title">НОВОСТИ<span> ПРОЕКТА</span></div>
+        <div class="posts__items">
+            <div class="posts-list">
+                <div class="posts-list__items">
+                    <div class="post-card posts-list__item">
+                        <picture class="post-card__picture">
+                            <img src="https://i.imgur.com/wTlMslA.png" alt="" class="post-card__image">
+                        </picture>
+                        <br>
+                        <a href="#" class="post-card__title">Жесткое открытие</a>
+                        <div class="post-card__description">Мы открылись епта</div>
+                        <div class="post-card__date">##.##.2023</div>
+                        <div class="post-card__action">
+                            <a href="we-are-open.html" target="_blank" class="post-card__link">
+                                Подробнее ⇒
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Add more menu items here -->
-        <div class="menu-item">
-            <img src="https://i.pinimg.com/564x/25/15/7c/25157cd49cfc8db7b2d7a4fd20ab3ed6.jpg" alt="Изображение" class="menu-image">
-            <div class="menu-content">
-                <h2>Обновление 1.1</h2>
-                <p>На нашем сервере вышло обновление 1.1 в данном обновление было добавлено множество различных функций</p>
-                <a href="#" class="button">Подробнее</a>
-            </div>
+        <div class="foot">
+            <img src="https://i.imgur.com/VHH5wO1.png" alt="Your Image Description" class="above-text-image">
+            <p>ATTERDAY</p>
+            <p>EGENDS</p>
+            <h4>&copy;2023</h4>
         </div>
     </div>
-
 
     <div class="mobile-menu" aria-hidden="true">
         <a href="https://latterday-legends.online" class="button">Главная</a>
@@ -116,31 +127,27 @@
             event.preventDefault();
         });
 
-        const menuContainer = document.querySelector('.menu');
-        const menuItems = document.querySelectorAll('.menu-item');
-            
-        let currentIndex = 0;
-        const totalItems = menuItems.length;
-            
-        function swipeMenu() {
-            menuItems[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % totalItems;
-            menuItems[currentIndex].classList.add('active');
-        }
-        
-        // Запускаем автоматическую анимацию свайпа каждые 5 секунд
-        const swipeInterval = setInterval(swipeMenu, 5000); // 5000 миллисекунд = 5 секунд
-        
-        // Остановите интервал, если пользователь навел курсор на меню
-        menuContainer.addEventListener('mouseenter', () => {
-            clearInterval(swipeInterval);
-        });
-        
-        // Возобновите интервал, когда пользователь уберет курсор с меню
-        menuContainer.addEventListener('mouseleave', () => {
-            swipeInterval = setInterval(swipeMenu, 5000); // 5000 миллисекунд = 5 секунд
+        window.addEventListener("scroll", function() {
+            const scrollTop = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
+
+            const scrollFraction = scrollTop / maxScroll;
+            const hue = Math.floor(120 + scrollFraction * 120); // Adjust hue as you like
+
+            scrollbarThumb.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
         });
 
+        // Получаем ссылку на кнопку
+        const scrollButton = document.getElementById('scrollButton');
+
+        // Добавляем обработчик события на кнопку
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // Добавляет плавную анимацию прокрутки
+            });
+        });
 
     </script>
 </body>
