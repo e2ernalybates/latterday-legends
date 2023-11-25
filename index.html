@@ -149,6 +149,12 @@
             });
         });
 
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.location.pathname.endsWith('/donate')) {
+                window.location.pathname = '/donate.html';
+            }
+        });
+
     </script>
 </body>
 </html>
