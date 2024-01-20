@@ -15,8 +15,8 @@
                 <p>Здесь вы найдете всю необходимую информацию о нашем проекте</p>
                 <a href="#" class="button" id="start-button">Начать</a>
                 <div class="small-buttons">
-                    <a href="pols" class="small-button" target="_blank">Пользовательское соглашение</a>
-                    <a href="pol" class="small-button" target="_blank">Политика конфиденциальности</a>
+                    <a href="pols.html" class="small-button" target="_blank">Пользовательское соглашение</a>
+                    <a href="pol.html" class="small-button" target="_blank">Политика конфиденциальности</a>
                 </div>
             </div>
             <img src="https://i.imgur.com/VHH5wO1.png" alt="Your Image Description" class="above-text-image">
@@ -33,12 +33,18 @@
             </a>
             <button class="mobile-menu-button" aria-label="Открыть меню">&#9776;</button>
             <ul class="nav-list">
-                <li><a href="play" class="button">Начать играть</a></li>
+                <li><a href="play.html" class="button">Начать играть</a></li>
                 <li><a href="https://forum-latterday-legends.online/index.php" class="button nav-button">Форум</a></li>
-                <button id="scrollButton" class="button nav-button">Новости проекта</button>
-                <li><a href="donate" class="button nav-button">Магазин</a></li>
+                <button id="newButton" class="button nav-button">Новости проекта</button>
+                <li><a href="donate.html" class="button nav-button">Магазин</a></li>
             </ul>
-            <a href="donate"><img src="images/cart.png" class="cart-icon" alt="Корзина"></a>
+            <a href="donate.html"><img src="images/cart.png" class="cart-icon" alt="Корзина"></a>
+            <div class="mobile-menu" aria-hidden="true">
+                <a href="play" class="button">Начать играть</a>
+                <a id="scrollButton" class="button nav-button">Новости проекта</a>
+                <a href="https://forum-latterday-legends.online/index.php" class="button nav-button">Форум</a>
+                <a href="donate.html" class="button nav-button">Магазин</a>
+            </div>
         </nav>
 
         <div class="text-box">
@@ -69,7 +75,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="posts container">
         <div class="posts__title section-title">НОВОСТИ<span> ПРОЕКТА</span></div>
         <div class="posts__items">
@@ -84,7 +90,7 @@
                         <div class="post-card__description">Мы открылись епта</div>
                         <div class="post-card__date">##.##.2023</div>
                         <div class="post-card__action">
-                            <a href="we-are-open" target="_blank" class="post-card__link">
+                            <a href="we-are-open.html" target="_blank" class="post-card__link">
                                 Подробнее ⇒
                             </a>
                         </div>
@@ -96,65 +102,117 @@
             <img src="https://i.imgur.com/VHH5wO1.png" alt="Your Image Description" class="above-text-image">
             <p>ATTERDAY</p>
             <p>EGENDS</p>
-            <h4>&copy;2023</h4>
+            <h4>&copy;2024</h4>
         </div>
     </div>
+   
+    <!--<div class="posts containers">
+        <div class="posts__items">
+            <div class="posts-list">
+                <div class="posts-list__items">
+                    <div class="post-card posts-list__item">
+                        <picture class="post-card__picture">
+                            <img src="https://i.imgur.com/wTlMslA.png" alt="" class="post-card__image">
+                        </picture>
+                        <br>
+                        <a href="#" class="post-card__title">Жесткое открытие</a>
+                        <div class="post-card__description">Мы открылись епта</div>
+                        <div class="post-card__date">##.##.2023</div>
+                        <div class="post-card__action">
+                            <a href="we-are-open.html" target="_blank" class="post-card__link">
+                                Подробнее ⇒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="posts__items">
+            <div class="posts-list">
+                <div class="posts-list__items">
+                    <div class="post-card posts-list__item">
+                        <picture class="post-card__picture">
+                            <img src="https://i.imgur.com/wTlMslA.png" alt="" class="post-card__image">
+                        </picture>
+                        <br>
+                        <a href="#" class="post-card__title">Жесткое открытие</a>
+                        <div class="post-card__description">Мы открылись епта</div>
+                        <div class="post-card__date">##.##.2023</div>
+                        <div class="post-card__action">
+                            <a href="we-are-open.html" target="_blank" class="post-card__link">
+                                Подробнее ⇒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <img src="https://i.imgur.com/VHH5wO1.png" alt="Your Image Description" class="above-text-image">
+            <p>ATTERDAY</p>
+            <p>EGENDS</p>
+            <h4>&copy;2024</h4>
+        </div>
+    </div>-->
 
-    <div class="mobile-menu" aria-hidden="true">
-        <a href="https://latterday-legends.online" class="button">Главная</a>
-        <a href="play" class="button nav-button">Начать играть</a>
-        <a href="forum" class="button nav-button">Форум</a>
-        <a href="donate" class="button nav-button">Магазин</a>
-    </div>
-
+    
     <script>
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
     
-        mobileMenu.style.display = 'none';
-    
-        const startButton = document.getElementById('start-button');
-        const newsButton = document.getElementById('news-button');
-        const aboutButton = document.getElementById('about-button');
-        
-        function hideWelcomeMenu() {
-            const welcomeMenu = document.querySelector('.welcome-menu');
-            welcomeMenu.style.display = 'none';
-        }
-
-        startButton.addEventListener('click', function (event) {
-            hideWelcomeMenu();
-            event.preventDefault();
-        });
-
-        window.addEventListener("scroll", function() {
-            const scrollTop = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
-
-            const scrollFraction = scrollTop / maxScroll;
-            const hue = Math.floor(120 + scrollFraction * 120); // Adjust hue as you like
-
-            scrollbarThumb.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
-        });
-
-        // Получаем ссылку на кнопку
-        const scrollButton = document.getElementById('scrollButton');
-
-        // Добавляем обработчик события на кнопку
-        scrollButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth' // Добавляет плавную анимацию прокрутки
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('menu-open');
             });
-        });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            if (window.location.pathname.endsWith('/donate')) {
-                window.location.pathname = '/donate.html';
+            mobileMenu.addEventListener('touchmove', function (e) {
+                e.preventDefault();
+            }, { passive: false });
+    
+            const startButton = document.getElementById('start-button');
+            const newsButton = document.getElementById('news-button');
+            const aboutButton = document.getElementById('about-button');
+    
+            function hideWelcomeMenu() {
+                const welcomeMenu = document.querySelector('.welcome-menu');
+                welcomeMenu.style.display = 'none';
             }
-        });
+    
+            startButton.addEventListener('click', function (event) {
+                hideWelcomeMenu();
+                event.preventDefault();
+            });
+    
+            window.addEventListener("scroll", function () {
+                const scrollTop = window.scrollY;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
+    
+                const scrollFraction = scrollTop / maxScroll;
+                const hue = Math.floor(120 + scrollFraction * 120);
+    
+                scrollbarThumb.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+            });
+    
+            const scrollButton = document.getElementById('scrollButton');
+    
+            scrollButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            });
 
+            const newButton = document.getElementById('newButton');
+            newButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            });
+
+        });
     </script>
+    
 </body>
 </html>
